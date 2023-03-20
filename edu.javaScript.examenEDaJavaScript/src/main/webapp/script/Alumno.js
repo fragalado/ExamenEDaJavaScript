@@ -27,6 +27,10 @@ class Alumno {
 	}
 	
 	// Métodos
+	
+	/**
+	 * Creará un nuevo alumno y devolvera la lista actualizada
+	 */
 	matriculaAlumno(lista){
 		// Pedimos nombre, apellidos, teléfono, marca portátil y modelo portátil
 		let nombre = prompt("Introduzca su nombre: ");
@@ -55,6 +59,9 @@ class Alumno {
 		return maxID + 1;
 	}
 	
+	/**
+	 * Borrará el alumno por el id pedido y devolvera la lista actualizada
+	 */
 	borrarAlumno(lista){
 		// Borraremos el alumno por el id
 		// Preguntamos el id del alumno a eliminar
@@ -71,6 +78,10 @@ class Alumno {
 		return lista;
 	}
 	
+	/**
+	 * Listar alumnos por pantalla
+	 * Mostrará en alertas los alumnos
+	 */
 	listarAlumno(lista){
 		// Mostraremos en una alerta los alumnos
 		lista.forEach(function(i){
@@ -105,7 +116,6 @@ do{
 	switch(opcion){
 		case 1:
 			// Matricula alumno
-			
 			lista = persona.matriculaAlumno(lista);
 			break;
 		case 2:
