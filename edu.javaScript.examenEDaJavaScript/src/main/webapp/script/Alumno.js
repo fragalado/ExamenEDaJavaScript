@@ -93,23 +93,23 @@ class Alumno {
 
 
 
-let opcion;
-var lista = [];
-let persona = new Alumno(0, "aaaa", "aaaa", "aaaa", "aaaa", "aaaa");
+let opcion; // Para guardar la opcion escogida
+var lista = []; // Lista para guardar objetos del tipo Alumno
+let persona = new Alumno(0, "aaaa", "aaaa", "aaaa", "aaaa", "aaaa"); // Objeto tipo Alumno
 do{
 	// Mostraremos el menu y guardaremos la opción escogida en una variable
 	opcion = prompt("1) Matricula de alumno\n2) Borrar alumno\n3)Listar alumnos con su portatil\n0) Salir");
 	
-	
 	// Si le damos a cancelar devuelve null, al pasarle Number devuelve un 0
 	// Si le damos a aceptar sin introducir nada devuelve un string vacio, al pasarle Number devuelve un 0
-	while(opcion == null || opcion == ""){
-		opcion = prompt("** Error: No se ha introducido ninguna opcion **\n1) Matricula de alumno\n2) Borrar alumno\n3)Listar alumnos con su portatil\n0) Salir");
-	}
-	
 	// Tiene que estar entre 0 y 3
-	while(opcion != "0" && opcion != "1" && opcion != "2" && opcion != "3"){
-		opcion = prompt("** Error: El valor no esta dentro del rango **\n1) Matricula de alumno\n2) Borrar alumno\n3)Listar alumnos con su portatil\n0) Salir");
+	while(opcion == null || opcion == "" || opcion != "0" && opcion != "1" && opcion != "2" && opcion != "3"){
+		// Para null y string vacio
+		if(opcion == null || opcion == "")
+			opcion = prompt("** Error: No se ha introducido ninguna opcion **\n1) Matricula de alumno\n2) Borrar alumno\n3)Listar alumnos con su portatil\n0) Salir");
+		// Para controlar la opcion escogida
+		else if(opcion != "0" && opcion != "1" && opcion != "2" && opcion != "3")
+			opcion = prompt("** Error: El valor no esta dentro del rango **\n1) Matricula de alumno\n2) Borrar alumno\n3)Listar alumnos con su portatil\n0) Salir");
 	}
 	
 	opcion = Number(opcion);
